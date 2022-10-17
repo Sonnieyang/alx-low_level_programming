@@ -1,20 +1,22 @@
 #include <stdio.h>
 
 /**
- * main - print the letters of the alphabet
+ * main - print single digit numbers
  * Return: Always 0
  */
 
 int main(void)
 {
-	int i = 97;
+	int i;
 
-	while (i < 123)
+	i = 48;
+
+	while (i < 58)
 	{
 		putchar(i);
 		i++;
-
 	}
+
 	putchar(10);
 
 	return (0);
