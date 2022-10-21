@@ -1,7 +1,7 @@
-#include "main.h"
+#include <stdio.h>
 
 /**
- * main - take the fizz-buzz challenge
+ * main - print fizzbuzz
  * Return: Always 0
  */
 
