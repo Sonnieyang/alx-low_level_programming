@@ -3,34 +3,26 @@
 
 /**
  * print_diagsums - prints the sums of the two diagonals
- * @a: array
+ * @a: the matrix
  * @size: size of array
  * Return: void
  */
 void print_diagsums(int *a, int size)
 {
 	int i;
-	int bdiagsum = 0;
-	int fdiagsum = 0;
-	int prev = 0;
+	int sum1 = 0;
+	int sum2 = 0;
 
 	for (i = 0; i < size * size; i++)
 	{
-		if (i ==0)
+		if (i % (size + 1) == 0)
 		{
-			bdiagsum += *(a + i);
-			prev = i;
+			sum1 += a[i];
 		}
-		else if (i == (prev + size + 1))
+		if (i % (size - 1) == 0 && (i > 0 && (i < (size * size - 1))))
 		{
-			bdiagsum += *(a + i);
-			prev = i;
+			sum2 += a[i];
 		}
 	}
-
-	for (i = 0; i < size; i++)
-	{
-		fdiagsum += *(a + (size * (i + 1) - (i + 1)));
-	}
-	printf("%d, %d\n", bdiagsum, fdiagsum);
+	printf("%d, %d\n", sum1, sum2);
 }
