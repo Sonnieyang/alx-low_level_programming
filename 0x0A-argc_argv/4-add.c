@@ -3,7 +3,8 @@
 #include <stdlib.h>
 
 /**
- * main - prints the sum of positive numbers
+ * main - adds positive numbers
+ * prints the sum followed by new line 
  * @argc: number of arguments
  * @argv: array of arguments
  * Return: (0)
@@ -42,7 +43,7 @@ int main(int argc, char *argv[])
 
 /**
  * is_number - checks to see if input is a number
- * @s: input to check for numberhood
+ * @s: input to check for number
  * Return: 1 if it is a number, 0 if not
  */
 int is_number(char *s)
