@@ -3,27 +3,36 @@
 /**
  * find_listint_loop - finds the loop in a linked list
  * @head: head of linked list
- * Return: address of the node where the loop starts
+ * Return: if no loop (NULL), or address of node where loop starts
  */
 listint_t *find_listint_loop(listint_t *head)
 {
-	listint_t *slow, *fast;
+	listint_t *dog, *cat;
 
-	slow = head;
-	fast = head;
-	while (head != NULL)
+	if (head == NULL || head->next == NULL)
+		return (NULL);
+
+	dog = head->next;
+	cat = (head->next)->next;
+
+	while (cat)
 	{
-		if (slow == fast)
+		if (dog == cat)
 		{
-			while (head != NULL)
+			dog = cat;
+
+			while (dog != cat)
 			{
-				if (slow == fast)
-					return (slow);
-				slow = slow->next;
-				fast = fast->next;
+				dog = dog->next;
+				cat = cat->next;
 			}
+
+			return (dog);
 		}
-		slow = slow->next;
-		fast = fast->next->next;
+
+		dog = dog->next;
+		cat = (cat->next)->next;
 	}
+
+	return (NULL);
 }
